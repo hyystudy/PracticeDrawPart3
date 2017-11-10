@@ -34,14 +34,21 @@ public class Practice10SetTextAlignView extends View {
         super.onDraw(canvas);
 
         // 使用 Paint.setTextAlign() 来调整文字对齐方式
-
+        float x = getWidth()/2;
         // 第一处：使用 Paint.Align.LEFT
-        canvas.drawText(text, getWidth() / 2, 100, paint);
+        //获取绘制文字的矩形rect
+        // rect.left 在x处
+        paint.setTextAlign(Paint.Align.LEFT);
+        canvas.drawText(text, x, 100, paint);
 
         // 第二处：使用 Paint.Align.CENTER
+        //rect.center 在x处
+        paint.setTextAlign(Paint.Align.CENTER);
         canvas.drawText(text, getWidth() / 2, 200, paint);
 
         // 第三处：使用 Paint.Align.RIGHT
+        //rect.right 在x处
+        paint.setTextAlign(Paint.Align.RIGHT);
         canvas.drawText(text, getWidth() / 2, 300, paint);
     }
 }
